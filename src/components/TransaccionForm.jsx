@@ -14,7 +14,7 @@ export default function TransaccionForm() {
 
   useEffect(() => {
     axios
-      .get("http://192.168.1.1:8080/api/categorias")
+      .get("${import.meta.env.VITE_API_URL}/api/categorias")
       .then((res) => setCategorias(res.data));
   }, []);
 
@@ -34,7 +34,7 @@ export default function TransaccionForm() {
       }
     };
 
-    axios.post("http://192.168.1.1:8080/api/transacciones", data).then(() => {
+    axios.post("${import.meta.env.VITE_API_URL}/api/transacciones", data).then(() => {
       setDescripcion("");
       setValor("");
       setFecha("");
@@ -47,7 +47,7 @@ export default function TransaccionForm() {
     if (!mesCalculo || !montoDisponible) return;
 
     axios
-      .get(`http://192.168.1.1:8080/api/transacciones?mes=${mesCalculo}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/transacciones?mes=${mesCalculo}`)
       .then((res) => {
         const transacciones = res.data;
         setTransaccionesMes(transacciones);
