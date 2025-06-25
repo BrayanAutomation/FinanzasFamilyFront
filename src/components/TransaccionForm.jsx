@@ -14,7 +14,7 @@ export default function TransaccionForm() {
 
   useEffect(() => {
     axios
-      .get("${import.meta.env.VITE_API_URL}api/categorias")
+      .get(`${import.meta.env.VITE_API_URL}api/categorias`)
       .then((res) => setCategorias(res.data));
   }, []);
 
@@ -34,7 +34,7 @@ export default function TransaccionForm() {
       }
     };
 
-    axios.post("${import.meta.env.VITE_API_URL}api/transacciones", data).then(() => {
+    axios.post(`${import.meta.env.VITE_API_URL}api/transacciones`, data).then(() => {
       setDescripcion("");
       setValor("");
       setFecha("");
