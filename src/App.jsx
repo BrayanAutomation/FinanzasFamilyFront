@@ -18,7 +18,7 @@ export default function App() {
     const { mesAnterior, anioAnterior } = obtenerMesAnterior(mesActual, anioActual);
 
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/resumen-mensual?mes=${mesAnterior}&anio=${anioAnterior}`)
+      .get(`${import.meta.env.VITE_API_URL}api/resumen-mensual?mes=${mesAnterior}&anio=${anioAnterior}`)
       .then((res) => {
         if (res.data?.id) {
           setMesPermitido(mesActual);
@@ -71,7 +71,7 @@ export default function App() {
             anio={anioPermitido}
             onMesCerrado={() => {
               axios
-                .post(`${import.meta.env.VITE_API_URL}/api/gastos-mensuales/copiar`, null, {
+                .post(`${import.meta.env.VITE_API_URL}api/gastos-mensuales/copiar`, null, {
                   params: {
                     mes: mesActual,
                     anio: anioActual,

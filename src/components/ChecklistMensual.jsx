@@ -8,8 +8,8 @@ export default function ChecklistMensual({ mes = 6, anio = 2025, onMesCerrado, o
   const [cerrado, setCerrado] = useState(false);
   const [resumenId, setResumenId] = useState(null);
 
-  const urlGastos = "${import.meta.env.VITE_API_URL}/api/gastos-mensuales";
-  const urlResumen = "${import.meta.env.VITE_API_URL}/api/resumen-mensual";
+  const urlGastos = "${import.meta.env.VITE_API_URL}api/gastos-mensuales";
+  const urlResumen = "${import.meta.env.VITE_API_URL}api/resumen-mensual";
 
   useEffect(() => {
     cargarGastos();

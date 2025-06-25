@@ -6,7 +6,7 @@ export default function HistorialCierres({ onEditar, refrescar }) {
 
   useEffect(() => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/api/resumen-mensual/historial")
+      .get("${import.meta.env.VITE_API_URL}api/resumen-mensual/historial")
       .then((res) => setCierres(res.data));
   }, [refrescar]);
 
